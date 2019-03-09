@@ -59,5 +59,4 @@ mongoose.connection.once("open", () => {
     .then(({ url }) => console.log(`Server is running on ${url}`));
 });
 
-ENGINE_API_KEY=service:NickLojas-8648:n6pMqfhshE1Kte1nHkZvoA;
 
