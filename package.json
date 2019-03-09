@@ -1,0 +1,22 @@
+{
+  "name": "full-stack-todo-app",
+  "version": "1.0.0",
+  "description": "full stack todo app using mern stack and graphql",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "author": "Nick Lojas",
+  "license": "ISC",
+  "dependencies": {
+    "graphql-yoga": "^1.17.4",
+    "mongoose": "^5.4.17"
+  },
+  "devDependencies": {
+    "concurrently": "^4.1.0",
+    "nodemon": "^1.18.10"
+  }
+}
