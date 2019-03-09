@@ -53,15 +53,11 @@ const resolvers = {
 
 const server = new GraphQLServer({ typeDefs, resolvers });
 
-if (process.env.NODE_ENV === "production") {
-  // Set Static folder
-  app.use(express.static("client/build"));
-
-  app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
-  });
-}
-
 mongoose.connection.once("open", () => {
-  server.start(() => console.log("Server is running on localhost:4000"));
+  server
+    .listen({ port: process.env.PORT || 4000 })
+    .then(({ url }) => console.log(`Server is running on ${url}`));
 });
+
+ENGINE_API_KEY=service:NickLojas-8648:n6pMqfhshE1Kte1nHkZvoA;
+
