@@ -3,8 +3,7 @@ This is my implementation of a full stack simple todo list web app.
 
 ## Usage
 1. First clone the repo,
-2. (Optional) then replace the placeholder security.htm file with your own,
-3. then in a terminal in the repository directory run 
+2. then in a terminal in the repository directory run 
 ```
 $ npm run full-install
 
