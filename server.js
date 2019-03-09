@@ -1,7 +1,6 @@
 const { GraphQLServer } = require("graphql-yoga");
 const mongoose = require("mongoose");
 const keys = require("./config/keys");
-const path = require("path");
 
 mongoose.connect(keys.mongoURI, { useNewUrlParser: true });
 
@@ -54,9 +53,5 @@ const resolvers = {
 const server = new GraphQLServer({ typeDefs, resolvers });
 
 mongoose.connection.once("open", () => {
-  server
-    .listen({ port: process.env.PORT || 4000 })
-    .then(({ url }) => console.log(`Server is running on ${url}`));
+  server.start(() => console.log("Server is running on port 4000"));
 });
-
-
